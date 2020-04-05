@@ -1,0 +1,12 @@
+<h1>Hello Results Page!</h1>
+<a href="{{ url_for('index') }}">Back</a><p>
+<form action = "/humanresult" method = "POST">
+<ul>
+{% for file_url in file_urls %}
+    <li><img style="height: 150px" src="{{ file_url }}"></li>
+    <li>  <input type="radio" name="mlvalue_{{file_url}}" value="0"> 0<br>
+        <input type="radio" name="mlvalue_{{file_url}}" value="1"> 1<br>
+{% endfor %}
+</ul>
+<p><input type = "submit" value = "submit" /></p>
+</form>
